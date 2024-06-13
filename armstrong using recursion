@@ -1,0 +1,20 @@
+#include<stdio.h>
+int sumOfCubes(int n);
+int main()
+{
+  int n, sum;
+  scanf("%d", &n);
+  sum = sumOfCubes(n);
+  if(sum == n)
+    printf("armstrong");
+  else
+    printf("not an armstrong");
+  return 0;
+}
+int sumOfCubes(int n)
+{
+  if (n == 0)
+    return 0;
+  int digit = n % 10;
+  return (digit * digit * digit) + sumOfCubes(n / 10);
+}
