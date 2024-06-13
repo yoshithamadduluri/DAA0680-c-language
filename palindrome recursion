@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+int isPalindrome(char text[], int begin, int end) {
+    if (begin >= end) {
+        return 1; 
+    }
+    if (text[begin] != text[end]) {
+        return 0; 
+    }
+    return isPalindrome(text, begin + 1, end - 1); 
+}
+int main() {
+    char text[100] = "madam"; 
+    int len = strlen(text);
+    if (isPalindrome(text, 0, len - 1)) {
+        printf("Palindrome\n");
+    } else {
+        printf("Not a palindrome\n");
+    }
+    return 0;
+}
